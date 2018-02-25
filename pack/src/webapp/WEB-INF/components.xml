@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>	
+	<!-- Project logic   -->
+	<bean id="net.stellers.sakai.academicsessionadmin.logic.AcademicSessionLogic"
+    	class="net.stellers.sakai.academicsessionadmin.logic.impl.AcademicSessionLogicImpl"
+    	init-method="init">    	
+    	<property name="dao" ref="net.stellers.sakai.academicsessionadmin.dao.AcademicSessionDao" />
+  		<property name="as_sakaiProxy" ref="net.stellers.sakai.academicsessionadmin.logic.AcademicSessionSakaiProxy" />    		
+    	<property name="cache" ref="net.stellers.sakai.academicsessionadmin.sakai.academicsession_cache" />	    	
+    </bean>
+        
+    <!--  Project DAOs -->
+    <bean id="net.stellers.sakai.academicsessionadmin.dao.AcademicSessionDao"
+		class="net.stellers.sakai.academicsessionadmin.dao.impl.AcademicSessionDaoImpl"
+		init-method="init">		
+		<property name="cm_api" ref="net.stellers.sakai.academicsessionadmin.logic.AcademicSessionSakaiProxy" />
+	</bean>	    
+		
+	<!--  SakaiProxy -->
+ 	<bean id="net.stellers.sakai.academicsessionadmin.logic.AcademicSessionSakaiProxy"
+    	class="net.stellers.sakai.academicsessionadmin.logic.impl.AcademicSessionSakaiProxyImpl"
+        init-method="init">        
+        <property name="cmService" ref="org.sakaiproject.coursemanagement.api.CourseManagementService" />
+        <property name="cmAdmin" ref="org.sakaiproject.coursemanagement.api.CourseManagementAdministration" />  
+     	<property name="siteService" ref="org.sakaiproject.site.api.SiteService" />   
+     	<property name="eventService" ref="org.sakaiproject.event.api.EventTrackingService" />
+    	<property name="functionManager" ref="org.sakaiproject.authz.api.FunctionManager" />  
+    	<property name="serverConfigurationService" ref="org.sakaiproject.component.api.ServerConfigurationService" />
+        <property name="sessionManager" ref="org.sakaiproject.tool.api.SessionManager" />
+        <property name="securityService" ref="org.sakaiproject.authz.api.SecurityService" />
+        <property name="toolManager" ref="org.sakaiproject.tool.api.ToolManager" />    	
+        <property name="prefService" ref="org.sakaiproject.user.api.PreferencesService" /> 	
+	</bean>
+	
+	<!-- Cache: ttl=1 hour -->
+    <bean id="net.stellers.sakai.academicsessionadmin.sakai.academicsession_cache"
+        class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+        <property name="cacheManager">
+            <ref bean="org.sakaiproject.memory.api.MemoryService.cacheManager"/>
+        </property>
+        <property name="cacheName">
+            <value>net.stellers.sakai.academicsessionadmin.sakai.academicsession_cache</value>
+        </property>
+        <property name="maxElementsInMemory" value="200" />
+        <property name="diskPersistent" value="false" />
+        <property name="eternal" value="false" />
+        <property name="timeToLive" value="3600" />
+        <property name="timeToIdle" value="3600" />
+    </bean>
+
+</beans>

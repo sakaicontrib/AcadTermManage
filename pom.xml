@@ -4,12 +4,12 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<name>sakai-term-admin - Base</name>
-	<groupId>net.stellers.sakai</groupId>
-	<artifactId>sakai-term-admin</artifactId>
-
+	<name>sakai-acadtermmanage - Base</name>
+	<groupId>org.sakaiproject.acadtermmanage</groupId>
+	<artifactId>sakai-acadtermmanage</artifactId>	
+	<version>11.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<version>1.11.x-SNAPSHOT</version>
+	
 	<parent>
 		<groupId>org.sakaiproject</groupId>
 		<artifactId>master</artifactId>
@@ -19,7 +19,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<my.wicket.version>6.21.0</my.wicket.version>
+		<my.wicket.version>6.29.0</my.wicket.version>
 		<my.lombok.version>1.16.10</my.lombok.version>
 		<my.logback.version>1.1.2</my.logback.version>
 	</properties>
@@ -29,14 +29,14 @@
 
 			<!-- project dependencies -->
 			<dependency>
-				<groupId>net.stellers.sakai</groupId>
-				<artifactId>sakai-term-admin-api</artifactId>
+				<groupId>org.sakaiproject.acadtermmanage</groupId>
+				<artifactId>sakai-acadtermmanage-api</artifactId>
 				<version>${project.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
-				<groupId>net.stellers.sakai</groupId>
-				<artifactId>sakai-term-admin-impl</artifactId>
+				<groupId>org.sakaiproject.acadtermmanage</groupId>
+				<artifactId>sakai-acadtermmanage-impl</artifactId>
 				<version>${project.version}</version>
 				<scope>runtime</scope>
 			</dependency>

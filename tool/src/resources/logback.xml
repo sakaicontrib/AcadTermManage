@@ -13,7 +13,7 @@
 
 	<!-- 
 	<appender name="HS_SO_FILE" class="ch.qos.logback.core.FileAppender">
-	    <file>${catalina.base}/logs/net.stellers.log</file>
+	    <file>${catalina.base}/logs/sakai.acadtermmanage.log</file>
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
         <level>DEBUG</level>
 	   </filter>

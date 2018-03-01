@@ -5,14 +5,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-	        <artifactId>sakai-term-admin</artifactId>
-        	<groupId>net.stellers.sakai</groupId>
-	    	<version>1.11.x-SNAPSHOT</version>
+	        <artifactId>sakai-acadtermmanage</artifactId>
+        	<groupId>org.sakaiproject.acadtermmanage</groupId>
+	    	<version>11.4-SNAPSHOT</version>
         	<relativePath>../pom.xml</relativePath>
 	</parent>
 	
-	<name>sakai-term-admin - Tool</name>
-	<artifactId>sakai-term-admin-tool</artifactId>
+	<name>sakai-acadtermmanage - Tool</name>
+	<artifactId>sakai-acadtermmanage-tool</artifactId>
 	
 	<packaging>war</packaging>
 	
@@ -20,8 +20,8 @@
 		
 		<!-- project dependencies -->
 		<dependency>
-      		<groupId>net.stellers.sakai</groupId>
-      		<artifactId>sakai-term-admin-api</artifactId>
+      		<groupId>org.sakaiproject.acadtermmanage</groupId>
+      		<artifactId>sakai-acadtermmanage-api</artifactId>
     	</dependency>
     	
     	

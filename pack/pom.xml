@@ -2,16 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
-		<artifactId>sakai-term-admin</artifactId>
-		<groupId>net.stellers.sakai</groupId>
-		<version>1.11.x-SNAPSHOT</version>
+		<artifactId>sakai-acadtermmanage</artifactId>
+		<groupId>org.sakaiproject.acadtermmanage</groupId>
+		<version>11.4-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
-
 	</parent>
 
-	<name>sakai-term-admin - Components</name>
-	<artifactId>sakai-term-admin-pack</artifactId>
+	<name>sakai-acadtermmanage - Components</name>	
+	<artifactId>sakai-acadtermmanage-pack</artifactId>
 
 	<packaging>sakai-component</packaging>
 
@@ -21,8 +21,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>net.stellers.sakai</groupId>
-			<artifactId>sakai-term-admin-impl</artifactId>
+			<groupId>org.sakaiproject.acadtermmanage</groupId>
+			<artifactId>sakai-acadtermmanage-impl</artifactId>
 		</dependency>
 	</dependencies>
 

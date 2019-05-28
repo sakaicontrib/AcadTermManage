@@ -19,7 +19,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<my.wicket.version>6.29.0</my.wicket.version>
+		<my.wicket.version>6.30.0</my.wicket.version>
 		<my.lombok.version>1.16.10</my.lombok.version>
 		<my.logback.version>1.1.2</my.logback.version>
 	</properties>
